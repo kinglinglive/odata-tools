@@ -34,7 +34,7 @@ export function antdProTableToODataQueryString(
   params: any,
   filter: any,
   sort: any,
-  defaultQuery: string
+  defaultQuery: string = ''
 ) {
 
   const odataQueryObj: any = {}
