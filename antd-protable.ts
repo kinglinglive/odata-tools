@@ -50,10 +50,18 @@ export function antdProTableToODataQueryString(
     odataQueryObj.orderby = (`${key.replace(/,/g, '/')} ${value === 'descend' ? 'desc' : 'asc'}`);
   }
 
+  // 搜索
+  if (params.keyword) {
+    odataQueryObj.search = `"${params.keyword}"`
+  }
+
   // 过滤
   // 删除params中的pagesize和current属性
   delete params.pageSize
   delete params.current
+
+  delete params.keyword
+
   // 合并params和filter，filter优先级高
   const filterObjAll: Record<any, any> = { ...params, ...filter }
 
