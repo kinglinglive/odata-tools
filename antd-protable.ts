@@ -6,6 +6,7 @@ const processingFunctions: Record<string, ProcessingFunction> = {
   text: (key, value) => `contains(${key},'${value}')`,
   select: (key, value) => `${key} eq ${value}`,
   date: (key, value) => `${key} eq ${value}`,
+  dateYear: (key, value) => `${key} eq ${value}`,
   digit: (key, value) => `${key} eq ${value}`,
   dateRange: (key, value) => `${key} ge ${value[0]} and ${key} le ${value[1]}`,
 };
