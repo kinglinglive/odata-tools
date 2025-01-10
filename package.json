@@ -1,6 +1,6 @@
 {
   "name": "odata-tools",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "anything to odata query.",
   "main": "index.js",
   "scripts": {
