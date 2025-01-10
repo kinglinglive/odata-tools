@@ -110,10 +110,10 @@ export function antdProTableToODataQueryString(
   // 存在默认filter
   if (defaultQueryObj.get('filter')) {
     if (odataQueryObj.filter) {
-      queryObj.append('filter', `${defaultQueryObj.get('filter')} and ${odataQueryObj.filter}`)
+      queryObj.set('filter', `${defaultQueryObj.get('filter')} and ${odataQueryObj.filter}`)
     }
     else {
-      queryObj.append('filter', defaultQueryObj.get('filter')!)
+      queryObj.append('filter', defaultQueryObj.get('filter')!)  
     }
   }
 
