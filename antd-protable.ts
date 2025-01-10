@@ -17,7 +17,7 @@ function getNestedKeysWithValues(obj: any, prefix: string = ''): { key: string, 
   for (let key in obj) {
     if (obj.hasOwnProperty(key)) {
       const newKey = prefix ? `${prefix}/${key}` : key;
-      if (typeof obj[key] === 'object' && obj[key] !== null) {
+      if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
         // 如果值是对象，则递归
         result = result.concat(getNestedKeysWithValues(obj[key], newKey));
       } else {
