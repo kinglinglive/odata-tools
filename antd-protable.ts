@@ -70,6 +70,7 @@ export function antdProTableToODataQueryString(
   const filterArr: string[] = []
 
   for (let { key, value } of filterObj) {
+    if(!value) continue
     // 匹配columns中的dataIndex，获取到对应的column
     const currentColumn = columns.find((item: any) => Array.isArray(item.dataIndex) ? item.dataIndex.join('/') === key : item.dataIndex === key)
     if (!currentColumn) {
