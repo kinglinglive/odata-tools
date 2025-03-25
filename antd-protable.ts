@@ -42,9 +42,12 @@ export function antdProTableToODataQueryString(
   const odataQueryObj: any = {}
 
   // 分页
-  odataQueryObj.count = true
-  odataQueryObj.top = params.pageSize
-  odataQueryObj.skip = (params.current - 1) * params.pageSize
+  if (params.pageSize && params.current)
+  {
+    odataQueryObj.count = true
+    odataQueryObj.top = params.pageSize
+    odataQueryObj.skip = (params.current - 1) * params.pageSize
+  }
 
   // 排序
   const entries = Object.entries(sort);
