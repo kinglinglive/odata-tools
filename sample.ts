@@ -1,5 +1,5 @@
 export function sayHello(name: string): string {
-  return `Hello World ${name}`;
+  return `Hello ${name}`;
 }
 
 // 实现斐波那契数列
